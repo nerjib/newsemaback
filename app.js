@@ -14,6 +14,7 @@ const Estimator = require('./src/controllers/estimator')
 const Users= require('./src/controllers/users')
 const Reports = require('./src/controllers/reports')
 const Analytics = require('./src/controllers/analytics')
+var request = require('request');
 
 
 
@@ -88,6 +89,15 @@ app.use('/api/v1/users', Users);
 app.use('/api/v1/reports', Reports);
 app.use('/api/v1/analytics', Analytics);
 
+app.post('/api/v1/upload', upload.single('image'), (req, res) => {
+
+  // console.log(req.body)
+    cloudinary.uploader.upload(req.file.path, function (result) {
+     //  console.log(result.secure_url)
+       res.send({imgurl:result.secure_url})
+   //   Activity.createReport(req, res, result.secure_url);
+     });
+   }); 
 
 
 
