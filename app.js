@@ -12,6 +12,8 @@ const cloudinary = require('cloudinary');
 const Estimator = require('./src/controllers/estimator')
 //const Activity= require('./src/controllers/activity')
 const Users= require('./src/controllers/users')
+const Reports = require('./src/controllers/reports')
+const Analytics = require('./src/controllers/analytics')
 
 
 
@@ -83,6 +85,8 @@ res.json({
 })
 
 app.use('/api/v1/users', Users);
+app.use('/api/v1/reports', Reports);
+app.use('/api/v1/analytics', Analytics);
 
 
 
