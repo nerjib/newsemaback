@@ -146,6 +146,19 @@ router.get('/getfollowupreports', async (req, res) => {
     }
   });
 
+//get closed reports
+router.get('/getclosedreports', async (req, res) => {
+    const getAllQ = `SELECT draftreports.id,draftreports.closeddate,draftreports.category,draftreports.event,draftreports.lga,draftreports.ward,draftreports.date,draftreports.source,draftreports.gps,draftreports.state,draftreports.gps,draftreports.sid,draftreports.vid,draftreports.oid,draftreports.place,users.first_name,users.last_name,users.type FROM draftreports left join users on draftreports.sid=users.id where draftreports.category='closed'`;
+    try {
+      // const { rows } = qr.query(getAllQ);
+      const { rows } = await db.query(getAllQ);
+      return res.status(201).send(rows);
+    } catch (error) {    
+      return res.status(400).send(`${error} jsh`);
+    }
+  });
+
+
 //get all draft reports
 router.get('/getdraft/:id', async (req, res) => {
   const getAllQ = `SELECT draftreports.id,draftreports.category,draftreports.event,draftreports.lga,draftreports.ward,draftreports.date,draftreports.source,draftreports.gps,draftreports.state,draftreports.gps,draftreports.sid,draftreports.vid,draftreports.oid,draftreports.place,users.first_name,
@@ -159,6 +172,8 @@ router.get('/getdraft/:id', async (req, res) => {
     return res.status(400).send(`${error} jsh`);
   }
 });
+
+
 
 
 router.get('/getuserdraft/:id', async (req, res) => {
