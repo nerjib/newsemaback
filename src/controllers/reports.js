@@ -186,7 +186,7 @@ router.get('/followup', async (req, res) => {
 });
 
 router.get('/followup/:id', async (req, res) => {
-  const getAllQ = 'SELECT * FROM followup left join users on users.id=followup.uid where rid=$1';
+  const getAllQ = 'SELECT * FROM followup left join users on followup.id=users.uid where rid=$1';
   try {
     // const { rows } = qr.query(getAllQ);
     const { rows } = await db.query(getAllQ,[req.params.id]);
