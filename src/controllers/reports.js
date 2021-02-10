@@ -186,7 +186,19 @@ router.get('/followup', async (req, res) => {
 });
 
 router.get('/followup/:id', async (req, res) => {
-  const getAllQ = 'SELECT * FROM followup left join users on followup.uid=users.id where rid=$1';
+    const getAllQ = 'SELECT * FROM followup  where rid=$1';
+    try {
+      // const { rows } = qr.query(getAllQ);
+      const { rows } = await db.query(getAllQ,[req.params.id]);
+      return res.status(201).send(rows);
+    } catch (error) {
+    
+      return res.status(400).send(`${error} jsh`);
+    }
+  });
+
+router.get('/followuplist/:id', async (req, res) => {
+  const getAllQ = 'SELECT users.first_name,users.last_name,followup.time,users.type FROM followup left join users on followup.uid=users.id where rid=$1';
   try {
     // const { rows } = qr.query(getAllQ);
     const { rows } = await db.query(getAllQ,[req.params.id]);
