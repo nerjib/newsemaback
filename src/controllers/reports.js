@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
   }
 });
 router.get('/reportid/:id', async (req, res) => {
-  const getAllQ = 'SELECT * FROM reports left join users on reports.uid=users.id where reports.id=$1';
+  const getAllQ = 'SELECT * FROM reports left join users on reports.sid=users.id where reports.id=$1';
   try {
     // const { rows } = qr.query(getAllQ);
     const { rows } = await db.query(getAllQ,[req.params.id]);
