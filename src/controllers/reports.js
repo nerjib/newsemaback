@@ -177,10 +177,10 @@ router.get('/getdraft/:id', async (req, res) => {
 
 
 router.get('/getuserdraft/:id', async (req, res) => {
-  const getAllQ = 'SELECT * FROM draftreports  where vid=$1 or oid=$2  order by id asc';
+  const getAllQ = 'SELECT * FROM draftreports  where vid=$1 or oid=$2 and category!=$3  order by id asc';
   try {
     // const { rows } = qr.query(getAllQ);
-    const { rows } = await db.query(getAllQ,[req.params.id, req.params.id]);
+    const { rows } = await db.query(getAllQ,[req.params.id, req.params.id, 'close']);
     return res.status(201).send(rows);
   } catch (error) {
   
