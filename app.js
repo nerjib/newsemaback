@@ -108,7 +108,6 @@ let fault = ""
   } else if (text === "1*1" || text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
     // This is a terminal request. Note how we start the response with END
-    if (text==="1*1"){lga='Lere'}else{lga='Others'}
     response = `What is the fault 
     ${lga +' '+ facility}`;
   } else if (text === "1*2") {
