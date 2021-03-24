@@ -111,7 +111,9 @@ if(text === ''){
 }else{
   const {fault} = facilityDetails
   message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fault}  ${fault} ${phoneNumber}`
-    
+    console.log(facilityDetails)
+    console.log(facilityDetails.facility)
+
 }
 
   // Print the response onto the page so that our SDK can read it
