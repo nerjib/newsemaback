@@ -89,7 +89,7 @@ app.use((req, res, next) => {
         2. Handpump Borehole`;
   } else if (text === "1") {
     // Business logic for first level response
-    response = `CON Facility ID`;
+    response = `END Facility ID`;
   }  else{
     response = `CON  Is the facility faulty
     1.yes
