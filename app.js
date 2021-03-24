@@ -78,8 +78,8 @@ app.use((req, res, next) => {
   
   app.post('/sms', function(req,res){
     console.log(req.body)
-    console.log(req.body.body+' '+req.body.From)
-    console.log(req.From)
+    //console.log(req.body.body+' '+req.body.From)
+  //  console.log(req.From)
 
 
   const twiml = new MessagingResponse();
@@ -89,6 +89,7 @@ app.use((req, res, next) => {
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
  // console.log(twiml)
+ res.send('fff')
 })
 
      
