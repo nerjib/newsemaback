@@ -113,7 +113,7 @@ if(text === ''){
   message = `CON What's your facility fault?`
   fault = `text.split('*')[1]`;
 }else{
-  message = `END Thanks for your report ${S} fid ${fid}  ${fault} ${phoneNumber}`
+  message = `END Thanks for your report ${facility} fid ${fid}  ${fault} ${phoneNumber}`
     console.log(fid)
     console.log(facility)
 
