@@ -79,28 +79,40 @@ app.use((req, res, next) => {
   app.post('/sms', function(req,res){
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
+    var webURL = 'http://kadruwassa.ng'
+    var welcomeMsg = `CON Kadruwassa functionality reports
+    select facility type to continue
+    1. Solar Motorized Borehole
+    2. Handpump Borehole`;
+
+    var facilityDetails = {
+        facility: "",
+        fault: "",
+        fid: "",
+        telephone: "",
+        open: true
+    }
+    var lastData = "";
+    var textValue = text.split('*').length
+    var message = ""
+
   let response = "";
 let fid=""
-  if (text === "") {
-    console.log(text);
-    // This is the first request. Note how we start the response with CON
-    response = `CON Facility type
-        1. Solar Motorized Borehole
-        2. Handpump Borehole`;
-  } else if (text === "1") {
-    // Business logic for first level response
-    response = `CON Facility ID`;
-    fid= text;
-
-  }else if(text===`${fid}*2`){
-    response = `CON  What is the problem1?`;
-
-  }  else{
-    response = `CON  Is the facility faulty ${fid}
-    1.yes
-    2. no`;
-  }
-  
+if(text === ''){
+  message = welcomeMsg
+}else if(textValue === 1){
+  message = "CON What do you want to eat?"
+  facilityDetails.facility = text;
+}else if(textValue === 2){
+  message = "CON Facility code?"
+  facilityDetails.fid = text.split('*')[1];
+}else if(textValue === 3){
+  message = `CON What's your facility fault?`
+  facilityDetails.fault = text.split('*')[2];
+}else{
+  message = `END Thanks for your report ${facilityDetails.facility} ${phoneNumber}`
+    
+}
 
   // Print the response onto the page so that our SDK can read it
   res.set("Content-Type: text/plain");
