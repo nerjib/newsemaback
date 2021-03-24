@@ -85,34 +85,36 @@ app.use((req, res, next) => {
     1. Solar Motorized Borehole
     2. Handpump Borehole`;
 
-    var facilityDetails = {
+    /*var facilityDetails = {
         facility: "",
         fault: "",
         fid: "",
         telephone: "",
         open: true
-    }
+    }*/
+    let facility='';
+    fault='';
+    fid="";
+
     var lastData = "";
     var textValue = text.split('*').length
     var message = ""
 
   let response = "";
-let fid=""
 if(text === ''){
   message = welcomeMsg
-  facilityDetails.facility = text;
+ facility = text;
 
 }else if(textValue === 1){
   message = "CON Facility code?"
-  facilityDetails.fid = text.split('*')[0];
+  fid = text.split('*')[0];
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
-  facilityDetails.fault = `text.split('*')[1]`;
+  fault = `text.split('*')[1]`;
 }else{
-  const {fault} = facilityDetails
-  message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fault}  ${fault} ${phoneNumber}`
-    console.log(facilityDetails)
-    console.log(facilityDetails.facility)
+  message = `END Thanks for your report ${facility} fid ${fid}  ${fault} ${phoneNumber}`
+    console.log(fid)
+    console.log(facility)
 
 }
 
