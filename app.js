@@ -80,7 +80,7 @@ app.use((req, res, next) => {
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
   let response = "";
-
+let fid=""
   if (text === "") {
     console.log(text);
     // This is the first request. Note how we start the response with CON
@@ -89,13 +89,14 @@ app.use((req, res, next) => {
         2. Handpump Borehole`;
   } else if (text === "1") {
     // Business logic for first level response
-    response = `END Facility ID`;
+    response = `CON Facility ID`;
   }  else{
-    response = `CON  Is the facility faulty
+    fid= text;
+    response = `CON  Is the facility faulty ${fid}
     1.yes
     2. no`;
   }
-  if( text === "1*2"){
+  if( text === `1*${fid}*2`){
     response = `CON  What is the problem?`;
   
   }
