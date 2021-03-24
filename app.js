@@ -76,6 +76,8 @@ app.use((req, res, next) => {
     next();
   });
   
+  let fid="";
+
   app.post('/sms', function(req,res){
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
@@ -92,9 +94,8 @@ app.use((req, res, next) => {
         telephone: "",
         open: true
     }*/
-    let facility='';
-    fault='';
-    fid="";
+    let facility='jjj';
+   let fault='';
 
     var lastData = "";
     var textValue = text.split('*').length
@@ -112,7 +113,7 @@ if(text === ''){
   message = `CON What's your facility fault?`
   fault = `text.split('*')[1]`;
 }else{
-  message = `END Thanks for your report ${facility} fid ${fid}  ${fault} ${phoneNumber}`
+  message = `END Thanks for your report ${S} fid ${fid}  ${fault} ${phoneNumber}`
     console.log(fid)
     console.log(facility)
 
