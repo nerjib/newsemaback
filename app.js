@@ -108,10 +108,10 @@ if(text === ''){
 
 }else if(textValue === 1){
   message = "CON Facility code?"
-  fid = text.split('*')[1];
+  fid = text.split('*')[0];
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
-  fault = text.split('*')[2];
+  fault = text.split('*')[1];
 }else{
   message = `END Thanks for your report ${facility} fid ${fid}  ${fault} ${phoneNumber}`
     console.log(fid)
