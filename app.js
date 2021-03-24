@@ -89,10 +89,10 @@ app.use((req, res, next) => {
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());*/
  // console.log(twiml)
- res.send('fff')
+ //res.send('fff')
 
- return ('hello')
- res.send('fff')
+ ////return ('hello')
+ res.write('fff')
 })
 
      
