@@ -81,23 +81,11 @@ app.use((req, res, next) => {
 
   let response = "";
   if (text === "") {
-    console.log(text);
     // This is the first request. Note how we start the response with CON
     response = `CON Facility type
         1. Solar Motorized Borehole
         2. Handpump Borehole`;
-  } else if (text === "1") {
-    // Business logic for first level response
-    response = `CON Facility ID`;
-  }else if(text=== "2"){
-    response = `CON  What is the problem1?`;
-
-  }  else{
-    response = `CON  Is the facility faulty
-    1.yes
-    2. no`;
   }
-  
 
   // Print the response onto the page so that our SDK can read it
   res.set("Content-Type: text/plain");
