@@ -80,27 +80,37 @@ app.use((req, res, next) => {
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
   let response = "";
-
+let lga="";
+let facility="";
+let fault = ""
   if (text === "") {
     console.log(text);
     // This is the first request. Note how we start the response with CON
-    response = `CON What would you like to check
-        1. My account
-        2. My phone number`;
+    
+    response = `What facility are you reporting
+        1. Solar Motorized Borehole
+        2. Handpump Borehole
+        3. Sanitation`;
   } else if (text === "1") {
     // Business logic for first level response
-    response = `CON Choose account information you want to view
-        1. Account number
-        2. Account balance`;
+    facility = 'SMBH'
+    response = `Select LGA
+        1. Lere
+        2. Others`;
   } else if (text === "2") {
+    facility = 'HPBH'
+
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    response = `END Your phone number is ${phoneNumber}`;
-  } else if (text === "1*1") {
+    response = `Select LGA
+        1. Lere
+        2. Others`;
+  } else if (text === "1*1" || text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
-    const accountNumber = "ACC100101";
     // This is a terminal request. Note how we start the response with END
-    response = `END Your account number is ${accountNumber}`;
+    if (text==="1*1"){lga='Lere'}else{lga='Others'}
+    response = `What is the fault 
+    ${lga +' '+ facility}`;
   } else if (text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
     const balance = "KES 10,000";
