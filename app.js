@@ -105,11 +105,11 @@ let fault = ""
     response = `Select LGA
         1. Lere
         2. Others`;
-  } else if (text === "1*1") {
+  } else if (text === "1*1" || text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
+    const accountNumber = "ACC100101";
     // This is a terminal request. Note how we start the response with END
-    response = `What is the fault 
-    ${lga +' '+ facility}`;
+    response = `END Your account number is ${accountNumber}`;
   } else if (text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
     const balance = "KES 10,000";
