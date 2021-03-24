@@ -110,7 +110,7 @@ if(text === ''){
   facilityDetails.fault = `text.split('*')[1]`;
 }else{
   const {fault} = facilityDetails
-  message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fid}  ${fault} ${phoneNumber}`
+  message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fault}  ${fault} ${phoneNumber}`
     
 }
 
