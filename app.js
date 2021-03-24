@@ -15,6 +15,7 @@ const Users= require('./src/controllers/users')
 const Reports = require('./src/controllers/reports')
 const Analytics = require('./src/controllers/analytics')
 //var request = require('request');
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 
 
@@ -75,7 +76,20 @@ app.use((req, res, next) => {
     next();
   });
   
-  
+  app.post('/sms', function(req,res){
+    console.log(req.body)
+    console.log(req.body.body+' '+req.body.From)
+    console.log(req.From)
+
+
+  const twiml = new MessagingResponse();
+
+  twiml.message('The Robots are coming! Head for the hills!');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+ // console.log(twiml)
+})
 
      
 app.get('/', function(req,res){
