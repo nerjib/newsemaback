@@ -110,10 +110,10 @@ if(text === ''){
   facility = text;
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
-  fid = text.split('*')[0];
+  fid = text.split('*')[1];
 }else{
-  message = `END Thanks for your report ${facility} fid ${fid}  ${text.split('*')[1]} ${phoneNumber}`
-  fault = text.split('*')[1];
+  message = `END Thanks for your report ${facility} fid ${fid}  ${text.split('*')[3]} ${phoneNumber}`
+  fault = text.split('*')[2];
 
     console.log(fid)
     console.log(facility)
