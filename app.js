@@ -88,7 +88,7 @@ app.use((req, res, next) => {
         1. Solar Motorized Borehole
         2. Handpump Borehole`;
   }  else if (text === "1*1") {
-    facilty = 'SMBH'
+    facilty = 'KES SMBH'
     // This is a second level response where the user selected 1 in the first instance
     //const accountNumber = "ACC100101";
     // This is a terminal request. Note how we start the response with END
