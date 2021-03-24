@@ -14,15 +14,14 @@ const Estimator = require('./src/controllers/estimator')
 const Users= require('./src/controllers/users')
 const Reports = require('./src/controllers/reports')
 const Analytics = require('./src/controllers/analytics')
-var request = require('request');
+//var request = require('request');
 
 
 
 
 
 
-
-const Request = require('./src/middleware/requestlog')
+//const Request = require('./src/middleware/requestlog')
 
 app.use(cors())
 
@@ -64,7 +63,7 @@ const storage = multer.diskStorage({
     storage,
     fileFilter,
   });
-  
+ 
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -89,6 +88,7 @@ app.use('/api/v1/users', Users);
 app.use('/api/v1/reports', Reports);
 app.use('/api/v1/analytics', Analytics);
 
+/*
 app.post('/api/v1/upload', upload.single('image'), (req, res) => {
 
   // console.log(req.body)
@@ -99,6 +99,6 @@ app.post('/api/v1/upload', upload.single('image'), (req, res) => {
      });
    }); 
 
-
+*/
 
 module.exports = app;
