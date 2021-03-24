@@ -99,10 +99,7 @@ let fid=""
     1.yes
     2. no`;
   }
-  if( text === `${fid}*2`){
-    response = `CON  What is the problem?`;
   
-  }
 
   // Print the response onto the page so that our SDK can read it
   res.set("Content-Type: text/plain");
