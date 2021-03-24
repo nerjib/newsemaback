@@ -104,16 +104,17 @@ app.use((req, res, next) => {
   let response = "";
 if(text === ''){
   message = welcomeMsg
- facility = text;
 
 }else if(textValue === 1){
   message = "CON Facility code?"
-  fid = text.split('*')[0];
+  facility = text;
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
-  fault = text.split('*')[1];
+  fid = text.split('*')[0];
 }else{
-  message = `END Thanks for your report ${facility} fid ${fid}  ${fault} ${phoneNumber}`
+  message = `END Thanks for your report ${facility} fid ${fid}  ${text.split('*')[1]} ${phoneNumber}`
+  fault = text.split('*')[1];
+
     console.log(fid)
     console.log(facility)
 
