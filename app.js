@@ -80,7 +80,6 @@ app.use((req, res, next) => {
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
   let response = "";
-let fid=""
   if (text === "") {
     console.log(text);
     // This is the first request. Note how we start the response with CON
@@ -94,8 +93,7 @@ let fid=""
     response = `CON  What is the problem1?`;
 
   }  else{
-    fid= text;
-    response = `CON  Is the facility faulty ${fid}
+    response = `CON  Is the facility faulty
     1.yes
     2. no`;
   }
