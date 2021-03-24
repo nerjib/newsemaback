@@ -81,13 +81,13 @@ app.use((req, res, next) => {
     //console.log(req.body.body+' '+req.body.From)
   //  console.log(req.From)
 
-
+/*
   const twiml = new MessagingResponse();
 
   twiml.message('The Robots are coming! Head for the hills!');
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+  res.end(twiml.toString());*/
  // console.log(twiml)
  res.send('fff')
 })
