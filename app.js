@@ -98,8 +98,6 @@ app.use((req, res, next) => {
     const balance = "KES 10,000";
     // This is a terminal request. Note how we start the response with END
     response = `END Your balance is ${balance}`;
-  }else{
-    response = `Facility ${facilty} ${text}`
   }
 
   // Print the response onto the page so that our SDK can read it
