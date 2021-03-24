@@ -90,13 +90,14 @@ app.use((req, res, next) => {
   } else if (text === "1") {
     // Business logic for first level response
     response = `CON Facility ID`;
-  } else if (text === "2") {
-    // Business logic for first level response
-    // This is a terminal request. Note how we start the response with END
-    response = `CON Your phone number is ${phoneNumber}`;
-  }else{
-    response = `CON  Facility fault`;
-
+  }  else{
+    response = `CON  Is the facility faulty
+    1.yes
+    2. no`;
+  }
+  if( text === "1*2"){
+    response = `CON  What is the problem?`;
+  
   }
 
   // Print the response onto the page so that our SDK can read it
