@@ -107,7 +107,7 @@ if(text === ''){
   facilityDetails.fid = text.split('*')[0];
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
-  facilityDetails.fault = text.split('*')[1];
+  facilityDetails.fault = `text.split('*')[1]`;
 }else{
   const {fault} = facilityDetails
   message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fid}  ${fault} ${phoneNumber}`
