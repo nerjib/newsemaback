@@ -78,13 +78,10 @@ app.use((req, res, next) => {
   
   app.post('/sms', function(req,res){
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
-
   let response = "";
   if (text === "") {
     // This is the first request. Note how we start the response with CON
-    response = `CON Facility type
-        1. Solar Motorized Borehole
-        2. Handpump Borehole`;
+    response = `CON Facility type`;
   }
 
   // Print the response onto the page so that our SDK can read it
