@@ -90,13 +90,16 @@ let fid=""
   } else if (text === "1") {
     // Business logic for first level response
     response = `CON Facility ID`;
+  }else if(text===`${fid}*2`){
+    response = `CON  What is the problem1?`;
+
   }  else{
     fid= text;
     response = `CON  Is the facility faulty ${fid}
     1.yes
     2. no`;
   }
-  if( text === fid+"*2"){
+  if( text === `${fid}*2`){
     response = `CON  What is the problem?`;
   
   }
