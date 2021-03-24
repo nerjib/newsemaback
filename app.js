@@ -80,23 +80,26 @@ app.use((req, res, next) => {
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
   let response = "";
-
+    let facilty = ""
   if (text === "") {
     console.log(text);
     // This is the first request. Note how we start the response with CON
-    response = ` What would you like to check
-        1. My account
-        2. My phone number`;
+    response = `CON What would you like to check
+        1. Solar Motorized Borehole
+        2. Handpump Borehole`;
   }  else if (text === "1*1") {
+    faclity = 'SMBH'
     // This is a second level response where the user selected 1 in the first instance
-    const accountNumber = "ACC100101";
+    //const accountNumber = "ACC100101";
     // This is a terminal request. Note how we start the response with END
-    response = `END Your account number is ${accountNumber}`;
+    response = `What if the fault?`;
   } else if (text === "1*2") {
     // This is a second level response where the user selected 1 in the first instance
     const balance = "KES 10,000";
     // This is a terminal request. Note how we start the response with END
     response = `END Your balance is ${balance}`;
+  }else{
+    response = `Facility ${facilty} ${text}`
   }
 
   // Print the response onto the page so that our SDK can read it
