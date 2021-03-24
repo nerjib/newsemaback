@@ -116,7 +116,7 @@ if(text === ''){
 
   // Print the response onto the page so that our SDK can read it
   res.set("Content-Type: text/plain");
-  res.send(response);
+  res.send(message);
   // DONE!!!
 })
 
