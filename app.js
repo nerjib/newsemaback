@@ -100,17 +100,16 @@ app.use((req, res, next) => {
 let fid=""
 if(text === ''){
   message = welcomeMsg
-}else if(textValue === 1){
-  message = "CON What do you want to eat?"
   facilityDetails.facility = text;
-}else if(textValue === 2){
+
+}else if(textValue === 1){
   message = "CON Facility code?"
-  facilityDetails.fid = text.split('*')[1];
-}else if(textValue === 3){
+  facilityDetails.fid = text.split('*')[0];
+}else if(textValue === 2){
   message = `CON What's your facility fault?`
-  facilityDetails.fault = text.split('*')[2];
+  facilityDetails.fault = text.split('*')[1];
 }else{
-  message = `END Thanks for your report ${facilityDetails.facility} ${phoneNumber}`
+  message = `END Thanks for your report ${facilityDetails.facility} fid ${facilityDetails.fid}  ${facilityDetails.fault} ${phoneNumber}`
     
 }
 
