@@ -90,7 +90,6 @@ let fid=""
   } else if (text === "1") {
     // Business logic for first level response
     response = `CON Facility ID`;
-    
   }else if(text===`${fid}*2`){
     response = `CON  What is the problem1?`;
 
