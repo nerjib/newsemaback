@@ -89,8 +89,8 @@ app.use((req, res, next) => {
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());*/
  // console.log(twiml)
- res.send('fff')
-
+ res.set("Content-Type: text/plain");
+  res.send('response');
  ////return ('hello')
  //res.write('fff')
 })
