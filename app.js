@@ -78,12 +78,16 @@ app.use((req, res, next) => {
   
   app.post('/sms', function(req,res){
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
-  let response = "";
-  if (text === "") {
-    // This is the first request. Note how we start the response with CON
-    response = `CON Facility type`;
-  }
 
+  let response = "";
+
+  if (text === "") {
+    console.log(text);
+    // This is the first request. Note how we start the response with CON
+    response = `CON What would you like to check
+        1. My account
+        2. My phone number`;
+  }
   // Print the response onto the page so that our SDK can read it
   res.set("Content-Type: text/plain");
   res.send(response);
