@@ -96,7 +96,7 @@ let fid=""
     1.yes
     2. no`;
   }
-  if( text === `1*${fid}*2`){
+  if( text === fid+"*2"){
     response = `CON  What is the problem?`;
   
   }
