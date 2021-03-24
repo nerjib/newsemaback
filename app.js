@@ -84,7 +84,7 @@ app.use((req, res, next) => {
   if (text === "") {
     console.log(text);
     // This is the first request. Note how we start the response with CON
-    response = `CON What would you like to check
+    response = ` What would you like to check
         1. My account
         2. My phone number`;
   }  else if (text === "1*1") {
