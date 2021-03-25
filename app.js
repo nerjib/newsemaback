@@ -162,14 +162,20 @@ if(text === ''){
     1. Baya aiki gaba daya
     2. Famfo baya bada wadataccen ruwa
     3. Ruwa baya taruwa a tanki
-    4. wani matsala daban ` 
+    4. Tuka-tuka na wahalar bugawa
+    5. Pipe na yoyo
+    6. Fallen sola ya fita
+    7. wani matsala daban    ` 
    
   }else{
     message = `CON What is the problem?
     1. Not working completely
     2. Low yield
     3. Water not pumpimg to tank
-    4. others`
+    4. Hard to pump
+    5. Leaking reticulation
+    6. Solar panel removed
+    7. others`
  
 
   }
