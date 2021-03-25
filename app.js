@@ -154,12 +154,33 @@ if(text === ''){
   /*message = `CON What is the problem?`
   fid = text.split('*')[1];
   facilityDetails.fid=text.split('*')[1]*/
-}else{
+}else if(textValue === 3){
+  facilityDetails.fid= text.split('*')[2]
+
+  if (lang === 2){
+    message = `CON Menene matsalan famfo
+    1. Baya aiki gaba daya
+    2. Famfo baya bada wadataccen ruwa
+    3. Ruwa baya taruwa a tanki
+    4. wani matsala daban ` 
+   
+  }else{
+    message = `CON What is the problem?
+    1. Not working completely
+    2. Low yield
+    3. Water not pumpimg to tank
+    4. others`
+ 
+
+  }
+
+}
+else{
   message = `END Thanks for your feedback on ${facilityDetails.facility} with details
    facility Id: ${facilityDetails.fid}
    fault:   ${text.split('*')[2]}`
-  fault = text.split('*')[2];
-  facilityDetails.fault= text.split('*')[2]
+  fault = text.split('*')[3];
+  facilityDetails.fault= text.split('*')[3]
     console.log(fid)
     console.log(facility)
 
