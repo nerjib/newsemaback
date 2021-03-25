@@ -129,21 +129,21 @@ if(text === ''){
 }else if(textValue === 2){
     if (lang ===2){
       message = `CON Saka lambar famfo` 
-      if(text.split('*')[1] === "2"){
+      if(text.split('*')[1] === "1"){
         facilityDetails.facility='Famfon tuka-tuka'
       facility='Famfon tuka-tuka'
     
-      }else if (text.split('*')[1] === "1"){
+      }else if (text.split('*')[1] === "2"){
         facilityDetails.facility='Famfon sola'
         facility='Famfon sola'    
       }     
     }else{
       message = "CON Input facility code"
-       if(text.split('*')[1] === "2"){
+       if(text.split('*')[1] === "1"){
         facilityDetails.facility='Handpump Borehole'
       facility='Handpump Borehole'
     
-      }else if (text.split('*')[1] === "1"){
+      }else if (text.split('*')[1] === "2"){
         facilityDetails.facility='Solar Motorize Borehole'
         facility='Solar Motorize Borehole'
     
