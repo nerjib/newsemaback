@@ -116,12 +116,12 @@ if(text === ''){
 }else if(textValue === 1){
   if(text.split('*')[0]==='2'){
     lang = 2
-    message = `Wani irin famfo ne?
+    message = `CON Wani irin famfo ne?
     1. Famfon tuka-tuka
     2. Famfon sola`
   }else {
     lang = 1
-    message = `Select facility type
+    message = `CON Select facility type
     1. Handpump borehole
     2. Solar motorized Borehole`
   }
