@@ -79,6 +79,14 @@ app.use((req, res, next) => {
   let fid="";
   let facility='';
   let fault='';
+
+  var facilityDetails = {
+    facility: "",
+    fault: "",
+    fid: "",
+    telephone: "",
+    open: true
+}
   app.post('/sms', function(req,res){
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
@@ -107,16 +115,27 @@ if(text === ''){
 
 }else if(textValue === 1){
   message = "CON Facility code?"
+  if(text === "1"){
+    facilityDetails.facility='Handpump Borehole'
+  facility='Handpump Borehole'
+
+  }else if (text === "2"){
+    facilityDetails.facility='Solar Motorize Borehole'
+    facility='Solar Motorize Borehole'
+
+  }
   facility = text;
+ facilityDetails.facility = text;
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
   fid = text.split('*')[1];
+  facilityDetails.fid=text.split('*')[1]
 }else{
   message = `END Thanks for your report ${facility} fid ${fid}  ${text.split('*')[2]} ${phoneNumber}`
   fault = text.split('*')[2];
-
+  facilityDetails.fault= text.split('*')[2]
     console.log(fid)
-    console.log(facility)
+    console.log(facilityDetails)
 
 }
 
