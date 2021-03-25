@@ -125,7 +125,6 @@ if(text === ''){
 
   }
   facility = text;
- facilityDetails.facility = text;
 }else if(textValue === 2){
   message = `CON What's your facility fault?`
   fid = text.split('*')[1];
