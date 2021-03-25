@@ -114,7 +114,7 @@ if(text === ''){
   message = welcomeMsg
 
 }else if(textValue === 1){
-  message = "CON Facility code?"
+  message = "CON Input facility code"
   if(text === "1"){
     facilityDetails.facility='Handpump Borehole'
   facility='Handpump Borehole'
@@ -126,12 +126,12 @@ if(text === ''){
   }
   facility = text;
 }else if(textValue === 2){
-  message = `CON What's your facility fault?`
+  message = `CON What is the problem?`
   fid = text.split('*')[1];
   facilityDetails.fid=text.split('*')[1]
 }else{
-  message = `END Thanks for your feedback on ${facilityDetails} with details
-   facility Id: ${fid}
+  message = `END Thanks for your feedback on ${facilityDetails.facility} with details
+   facility Id: ${facilityDetails.fid}
    fault  ${text.split('*')[2]}`
   fault = text.split('*')[2];
   facilityDetails.fault= text.split('*')[2]
