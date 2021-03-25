@@ -163,9 +163,9 @@ if(text === ''){
     2. Famfo baya bada wadataccen ruwa
     3. Ruwa baya taruwa a tanki
     4. Tuka-tuka na wahalar bugawa
-    5. Pipe na yoyo
-    6. Fallen sola ya fita
-    7. wani matsala daban    ` 
+    5. Bututun ruwa ya fashe
+    6. Allon sola ya fita
+    7. wani matsala daban` 
    
   }else{
     message = `CON What is the problem?
@@ -173,8 +173,8 @@ if(text === ''){
     2. Low yield
     3. Water not pumpimg to tank
     4. Hard to pump
-    5. Leaking reticulation
-    6. Solar panel removed
+    5. Leaking pipe
+    6. Solar panel vandalized
     7. others`
  
 
@@ -215,11 +215,11 @@ else{
   if (lang===2){
     message = `END Mun gode da wannan bayanin akan ${facilityDetails.facility} 
     Lambar famfo: ${facilityDetails.fid}
-    Matsalar famfo:   ${text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"}`
+    Matsalar famfo:   ${text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":text.split('*')[3]==='4'?"Tuka-tuka na wahalar bugawa":text.split('*')[3]==='5'?"Bututun ruwa ya fashe":text.split('*')[3]==='6'?"Allon sola ya fita":"Wani matsalan daban"}`
   }else{
   message = `END Thanks for your feedback on ${facilityDetails.facility} with details
    facility Id: ${facilityDetails.fid}
-   fault:   ${text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"}`
+   fault:   ${text.split('*')[3]==='1'?"Not working completely":text.split('*')[3]==='2'?"Low water yield":text.split('*')[3]==='3'?"water not pumping to tank":text.split('*')[3]==='4'?"Hard to pump":text.split('*')[3]==='5'?"Leaking pipe":text.split('*')[3]==='6'?"Solar panel vandalized":"Wani matsalan daban"}`
   }
    fault = text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban";
   facilityDetails.fault= text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"
