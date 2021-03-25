@@ -176,10 +176,16 @@ if(text === ''){
 
 }
 else{
+  if (lang===2){
+    message = `END Mun gode da wannan bayanin akan ${facilityDetails.facility} 
+    Lambar famfo: ${facilityDetails.fid}
+    Matsalar famfo:   ${text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"}`
+  }else{
   message = `END Thanks for your feedback on ${facilityDetails.facility} with details
    facility Id: ${facilityDetails.fid}
    fault:   ${text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"}`
-  fault = text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban";
+  }
+   fault = text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban";
   facilityDetails.fault= text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"
     console.log(fid)
     console.log(facility)
