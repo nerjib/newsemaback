@@ -91,10 +91,9 @@ app.use((req, res, next) => {
     const { sessionId, serviceCode, phoneNumber, text } = req.body;
 
     var webURL = 'http://kadruwassa.ng'
-    var welcomeMsg = `CON Kadruwassa functionality reports
-    select facility type to continue
-    1. Solar Motorized Borehole
-    2. Handpump Borehole`;
+    var welcomeMsg = `CON Select language/ Zabi yare 
+    1. English
+    2. Hausa`;
 
     /*var facilityDetails = {
         facility: "",
@@ -108,27 +107,54 @@ app.use((req, res, next) => {
     var lastData = "";
     var textValue = text.split('*').length
     var message = ""
+    var lang = ""
 
   let response = "";
 if(text === ''){
   message = welcomeMsg
 
 }else if(textValue === 1){
-  message = "CON Input facility code"
-  if(text === "2"){
-    facilityDetails.facility='Handpump Borehole'
-  facility='Handpump Borehole'
+  if(text==='2'){
+    lang = 2
+    message = `Wani irin famfo ne?
+    1. Famfon tuka-tuka
+    2. Famfon sola`
 
-  }else if (text === "1"){
-    facilityDetails.facility='Solar Motorize Borehole'
-    facility='Solar Motorize Borehole'
-
+  }else {
+    lang = 1
+    message = `Select facility type
+    1. Handpump borehole
+    2. Solar motorized Borehole`
   }
-  facility = text;
+ 
 }else if(textValue === 2){
-  message = `CON What is the problem?`
+    if (lang ===2){
+      message = `CON Saka lambar famfo` 
+      if(text.split('*')[1] === "2"){
+        facilityDetails.facility='Famfon tuka-tuka'
+      facility='Famfon tuka-tuka'
+    
+      }else if (text.split('*')[1] === "1"){
+        facilityDetails.facility='Famfon sola'
+        facility='Famfon sola'    
+      }     
+    }else{
+      message = "CON Input facility code"
+       if(text.split('*')[1] === "2"){
+        facilityDetails.facility='Handpump Borehole'
+      facility='Handpump Borehole'
+    
+      }else if (text.split('*')[1] === "1"){
+        facilityDetails.facility='Solar Motorize Borehole'
+        facility='Solar Motorize Borehole'
+    
+      }
+
+    }
+
+  /*message = `CON What is the problem?`
   fid = text.split('*')[1];
-  facilityDetails.fid=text.split('*')[1]
+  facilityDetails.fid=text.split('*')[1]*/
 }else{
   message = `END Thanks for your feedback on ${facilityDetails.facility} with details
    facility Id: ${facilityDetails.fid}
