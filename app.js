@@ -115,11 +115,11 @@ if(text === ''){
 
 }else if(textValue === 1){
   message = "CON Input facility code"
-  if(text === "1"){
+  if(text === "2"){
     facilityDetails.facility='Handpump Borehole'
   facility='Handpump Borehole'
 
-  }else if (text === "2"){
+  }else if (text === "1"){
     facilityDetails.facility='Solar Motorize Borehole'
     facility='Solar Motorize Borehole'
 
