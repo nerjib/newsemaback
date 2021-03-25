@@ -127,7 +127,7 @@ if(text === ''){
   }
  
 }else if(textValue === 2){
-    if (lang ===2){
+    if (lang == 2){
       message = `CON Saka lambar famfo` 
       if(text.split('*')[1] === "1"){
         facilityDetails.facility='Famfon tuka-tuka'
