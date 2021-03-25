@@ -173,6 +173,36 @@ if(text === ''){
  
 
   }
+  /*
+  
+  if (lang === 2 && facilityDetails.facility=== 'Famfon tuka-tuka' ){
+    message = `CON Menene matsalan famfo
+    1. Baya aiki gaba daya
+    2. Famfo baya bada wadataccen ruwa
+    3. wani matsala daban ` 
+   
+  }else if (lang === 2 && facilityDetails.facility=== 'Famfon sola' ){
+    message = `CON Menene matsalan famfo
+    1. Baya aiki gaba daya
+    2. Famfo baya bada wadataccen ruwa
+    3. Babu ruwa a wasu tap island
+    4. wani matsala daban ` 
+   
+  }else if ( facilityDetails.facility=== 'Handpump Borehole' ){
+    message = `CON What is the problem?
+    1. Not working completely
+    2. Low yield
+    3. others`
+   
+  }else if (facilityDetails.facility=== 'Solar Motorize Borehole' ){
+    message = `CON What is the problem?
+    1. Not working completely
+    2. Low yield
+    3. Water not reaching some tap island
+    4. others`
+   
+  }
+  */
 
 }
 else{
