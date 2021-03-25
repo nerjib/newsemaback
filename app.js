@@ -155,12 +155,14 @@ if(text === ''){
   fid = text.split('*')[1];
   facilityDetails.fid=text.split('*')[1]*/
 }else{
-  message = `END Thanks for your feedback on ${facilityDetails.facility} with details
+  message = `END Thanks for your feedback on ${facility} with details
    facility Id: ${facilityDetails.fid}
    fault:   ${text.split('*')[2]}`
   fault = text.split('*')[2];
   facilityDetails.fault= text.split('*')[2]
     console.log(fid)
+    console.log(facility)
+
     console.log(facilityDetails)
 
 }
