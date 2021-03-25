@@ -132,7 +132,7 @@ if(text === ''){
 }else{
   message = `END Thanks for your feedback on ${facilityDetails.facility} with details
    facility Id: ${facilityDetails.fid}
-   fault  ${text.split('*')[2]}`
+   fault:   ${text.split('*')[2]}`
   fault = text.split('*')[2];
   facilityDetails.fault= text.split('*')[2]
     console.log(fid)
