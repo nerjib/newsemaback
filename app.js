@@ -180,7 +180,7 @@ else{
    facility Id: ${facilityDetails.fid}
    fault:   ${text.split('*')[3]}`
   fault = text.split('*')[3];
-  facilityDetails.fault= text.split('*')[3]
+  facilityDetails.fault= text.split('*')[3]==='1'?"Baya aiki gaba daya":text.split('*')[3]==='2'?"Ba wadataccen":text.split('*')[3]==='3'?"ruwa baya taruwa":"Wani matsalan daban"
     console.log(fid)
     console.log(facility)
 
